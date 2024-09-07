@@ -547,7 +547,6 @@ class ChatController extends State<ChatPageWithRoom>
   void sendImageAction() async {
     final result = await AppLock.of(context).pauseWhile(
       FilePicker.platform.pickFiles(
-        compressionQuality: 0,
         type: FileType.image,
         withData: true,
         allowMultiple: false,
