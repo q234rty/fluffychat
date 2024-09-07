@@ -66,7 +66,12 @@ android {
             versionNameSuffix "-debug"
         }
         release {
-            signingConfig signingConfigs.release
+            signingConfig signingConfigs.debug
+            applicationVariants.all { variant ->
+                variant.outputs.all { output ->
+                    output.outputFileName = "app-release.apk"
+                }
+            }
         }
     }
     // https://stackoverflow.com/a/77494454/8222484
